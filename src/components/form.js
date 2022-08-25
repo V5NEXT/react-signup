@@ -14,7 +14,6 @@ const [email, setEmail] = useState('');
 const [phone, setPhone] = useState('');
 const [message, setMessage] = useState('');
 const [isModalOpen, setModalIsOpen] = useState(false);
-const [isSuccess, setisSuccess] = useState(false);
 
 
 // States for checking the errors
@@ -52,30 +51,25 @@ const handleSubmit = (e) => {
 	e.preventDefault();
 	if (name === '' || email === '' || phone === '') {
 	setError(true);
+    setName('');
+    setPhone('');
+    setEmail('');
+    setMessage('');
 	} else {
 	setSubmitted(true);
 	setError(false);
+    setName('');
+    setPhone('');
+    setEmail('');
+    setMessage('');
 	}
     toggleModal();
 };
 
-// Showing success message
-const successMessage = () => {
-    // setisSuccess(prevCheck => !prevCheck);
-	return isSuccess,name
-};
-
-// Showing error message if error is true
-const errorMessage = () => {
-	return (
-        isSuccess
-
-	);
-};
 
 return (
 	<div className="form">
-        {isModalOpen && <Modal onRequestClose={toggleModal} onModalLoad={isSuccess ? 'You are Succesfully registerd': 'Please Enter all Mandatory Values'}/>}
+        {isModalOpen && <Modal onRequestClose={toggleModal} onModalLoad={submitted ? 'You are Succesfully registerd': 'Please Enter all Mandatory Values'}/>}
 	{/* Calling to the methods */}
 	<form className='main-form'>
         <div className="user-details">

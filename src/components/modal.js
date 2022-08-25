@@ -1,4 +1,6 @@
 import { useEffect } from 'react';
+import { AiFillCloseCircle } from 'react-icons/ai';
+
 
 
 
@@ -27,14 +29,13 @@ export const Modal = ({ onRequestClose , onModalLoad}) => {
 	return (
 		<div className="modal__backdrop">
 			<div className="modal__container">
+                <AiFillCloseCircle className='close-btn' onClick={onRequestClose}/>
+                
 				<h3 className="modal__title">Alert</h3>
 			    <h4>{onModalLoad}</h4>
 				<p>
 					To close this modal, press the button below or use the Escape key on desktop.
 				</p>
-				<button type="button" onClick={onRequestClose}>
-					Close this modal
-				</button>
 
 			</div>
 		</div>
