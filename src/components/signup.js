@@ -10,12 +10,18 @@ import { useState } from "react";
 export default function Signup() {
 const [isModalOpen, setModalIsOpen] = useState(false);
 const [dataFromChild, setDataFromChild] = useState(false);
-const toggleModal = () => {
+const ToggleModal = () => {
+
     setModalIsOpen(!isModalOpen);
 };
+const DataFromChild = num => {
+    setDataFromChild(num);
+  };
+
 return(
     <div className="container">
-            {isModalOpen && <Modal onRequestClose={toggleModal} onModalLoad={dataFromChild ? 'You are Succesfully registerd': 'Please Enter all Mandatory Values'}/>}
+        {console.log("Inside JSX", dataFromChild)}
+            {isModalOpen && <Modal onRequestClose={ToggleModal} onModalLoad={dataFromChild ? 'You are Succesfully registerd': 'Please Enter all Mandatory Values'}/>}
 
             <div className="split left">
             <div className="centered-left">
@@ -53,7 +59,7 @@ return(
 
             <div className="split right">
             <div className="centered-right">
-           <Form setDataFromChild={setDataFromChild} toggleModalFromChild={toggleModal}/>
+           <Form DataFromChild={DataFromChild} toggleModalFromChild={ToggleModal}/>
             </div>
             </div>
    </div>
