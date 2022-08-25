@@ -44,7 +44,7 @@
     margin-left: 1rem;
   }
   .navigation-menu {
-    margin-left: auto;
+    margin-left: 60%
   }
   .navigation-menu ul {
     display: flex;
@@ -59,13 +59,16 @@
     display: block;
     width: 100%;
   }
+  .navigation-menu li :hover{
+    color: #00b4b7;
+  }
   .hamburger {
     border: 0;
     height: 40px;
     width: 40px;
     padding: 0.5rem;
     border-radius: 50%;
-    background-color: #283b8b;
+    background-color: #00b4b7;
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
     position: absolute;
@@ -75,5 +78,9 @@
     display: none;
   }
   .hamburger:hover {
-    background-color: #2642af;
+    background-color: #00b4b7;
+  }
+  .company-logo{
+    width: 225px;
+    height: 110px;
   }

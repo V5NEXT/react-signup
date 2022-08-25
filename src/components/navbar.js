@@ -1,6 +1,6 @@
 import { useState } from "react"
 import "../style/navbar.css"
-// import companyLogo from '../img/logo.jpg'
+import pic from "../img/icon.jpg";
 
 export default function Navbar() {
   const [isNavExpanded, setIsNavExpanded] = useState(false)
@@ -8,7 +8,7 @@ export default function Navbar() {
   return (
     <nav className="navigation">
       <a href="/" className="brand-name">
-      <img src='../img/logo.jpg' /> </a>
+      <img className="company-logo" src={pic} /> </a>
       <button
         className="hamburger"   
         onClick={() => {
@@ -24,13 +24,13 @@ export default function Navbar() {
       >
         <ul>
           <li>
-            <a className="navlinks" href="/home">Home</a>
+            <a className="navlinks" href="/">Home</a>
           </li>
           <li>
-            <a className="navlinks"  href="/about">About Us</a>
+            <a className="navlinks"  href="/">About Us</a>
           </li>
           <li>
-            <a className="navlinks"  href="/contact">Contact Us</a>
+            <a className="navlinks"  href="/">Contact Us</a>
           </li>
         </ul>
       </div>

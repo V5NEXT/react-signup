@@ -112,3 +112,44 @@
         float: left;
         padding: 3%;
     }
+
+    #input-wrapper * {
+        position: absolute;
+      }
+      
+      #input-wrapper label {
+        z-index: 99;
+        line-height: 25px;
+        padding: 2px;
+        margin-left: 5px;
+      }
+      
+      #input-wrapper input {
+        height: 25px;
+        text-indent: 35px;
+      }
+      .modal__backdrop {
+        bottom: 0;
+        left: 0;
+        overflow: auto;
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 1;
+    }
+    
+    .modal__container {
+        background: #fff;
+        border-radius: 5px;
+        max-width: 100%;
+        margin: 50px auto;
+        padding: 15px;
+        width: 560px;
+    }
+    
+    .modal__title {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 25px;
+    }
+    

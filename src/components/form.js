@@ -1,5 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import '../style/form.css'
+import { Modal } from './modal';
+
+
+
+
 
 export default function Form() {
 
@@ -8,11 +13,17 @@ const [name, setName] = useState('');
 const [email, setEmail] = useState('');
 const [phone, setPhone] = useState('');
 const [message, setMessage] = useState('');
+const [isModalOpen, setModalIsOpen] = useState(false);
+const [isSuccess, setisSuccess] = useState(false);
+
 
 // States for checking the errors
 const [submitted, setSubmitted] = useState(false);
 const [error, setError] = useState(false);
 
+const toggleModal = () => {
+    setModalIsOpen(!isModalOpen);
+};
 // Handling the name change
 const handleName = (e) => {
 	setName(e.target.value);
@@ -45,42 +56,27 @@ const handleSubmit = (e) => {
 	setSubmitted(true);
 	setError(false);
 	}
+    toggleModal();
 };
 
 // Showing success message
 const successMessage = () => {
-	return (
-	<div
-		className="success"
-		style={{
-		display: submitted ? '' : 'none',
-		}}>
-		<h1>User {name} successfully registered!!</h1>
-	</div>
-	);
+    // setisSuccess(prevCheck => !prevCheck);
+	return isSuccess,name
 };
 
 // Showing error message if error is true
 const errorMessage = () => {
 	return (
-	<div
-		className="error"
-		style={{
-		display: error ? '' : 'none',
-		}}>
-		<h1>Please enter all the fields</h1>
-	</div>
+        isSuccess
+
 	);
 };
 
 return (
 	<div className="form">
+        {isModalOpen && <Modal onRequestClose={toggleModal} onModalLoad={isSuccess ? 'You are Succesfully registerd': 'Please Enter all Mandatory Values'}/>}
 	{/* Calling to the methods */}
-	<div className="messages">
-		{errorMessage()}
-		{successMessage()}
-	</div>
-
 	<form className='main-form'>
         <div className="user-details">
 
