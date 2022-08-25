@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
 import { AiFillCloseCircle } from 'react-icons/ai';
+import '../style/modal.css';
 
 
 
 
 export const Modal = ({ onRequestClose , onModalLoad}) => {
 	// Use useEffect to add an event listener to the document
-    
 	useEffect(() => {
 		function onKeyDown(event) {
 			if (event.keyCode === 27) {

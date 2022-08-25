@@ -3,11 +3,20 @@ import '../style/signup.css'
 import Form from "./form";
 import { AiFillPhone, AiOutlineMail } from 'react-icons/ai';
 import { MdAddLocationAlt } from 'react-icons/md'
+import { Modal } from "./modal";
+import { useState } from "react";
+
 
 export default function Signup() {
-
+const [isModalOpen, setModalIsOpen] = useState(false);
+const [dataFromChild, setDataFromChild] = useState(false);
+const toggleModal = () => {
+    setModalIsOpen(!isModalOpen);
+};
 return(
     <div className="container">
+            {isModalOpen && <Modal onRequestClose={toggleModal} onModalLoad={dataFromChild ? 'You are Succesfully registerd': 'Please Enter all Mandatory Values'}/>}
+
             <div className="split left">
             <div className="centered-left">
                 <h2 className="main-heading">We'd Love to Hear <br/>from you</h2>
@@ -44,7 +53,7 @@ return(
 
             <div className="split right">
             <div className="centered-right">
-           <Form/>
+           <Form setDataFromChild={setDataFromChild} toggleModalFromChild={toggleModal}/>
             </div>
             </div>
    </div>

@@ -3,10 +3,7 @@ import '../style/form.css'
 import { Modal } from './modal';
 
 
-
-
-
-export default function Form() {
+export default function Form({ setDataFromChild , toggleModalFromChild}) {
 
 // States for registration
 const [name, setName] = useState('');
@@ -22,6 +19,7 @@ const [error, setError] = useState(false);
 
 const toggleModal = () => {
     setModalIsOpen(!isModalOpen);
+    setDataFromChild(submitted);
 };
 // Handling the name change
 const handleName = (e) => {
@@ -63,13 +61,13 @@ const handleSubmit = (e) => {
     setEmail('');
     setMessage('');
 	}
-    toggleModal();
+    toggleModalFromChild()
 };
 
 
 return (
 	<div className="form">
-        {isModalOpen && <Modal onRequestClose={toggleModal} onModalLoad={submitted ? 'You are Succesfully registerd': 'Please Enter all Mandatory Values'}/>}
+        {/* {isModalOpen && <Modal onRequestClose={toggleModal} onModalLoad={submitted ? 'You are Succesfully registerd': 'Please Enter all Mandatory Values'}/>} */}
 	{/* Calling to the methods */}
 	<form className='main-form'>
         <div className="user-details">
