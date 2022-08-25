@@ -115,16 +115,16 @@
 
     #input-wrapper * {
         position: absolute;
+        margin-right: 100%;
       }
       
       #input-wrapper label {
         z-index: 99;
-        line-height: 25px;
-        padding: 2px;
-        margin-left: 5px;
+        line-height: 40px;
+        padding: 5px;
+        color: #ccc;
       }
       
       #input-wrapper input {
-        height: 25px;
         text-indent: 35px;
       }

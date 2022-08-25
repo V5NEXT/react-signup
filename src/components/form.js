@@ -77,8 +77,10 @@ return (
 
             <div className="flex-child green">
             <label className="details">Phone number</label>
+                        <div id="input-wrapper">
+                        <label for="number">+44</label>
                         <input type="number" onChange={handleNumber} value={phone} placeholder="Enter your phone" required/></div>
-
+                        </div>
             </div>
 
           <div className="input-box">
