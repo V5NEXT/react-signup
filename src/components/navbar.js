@@ -1,6 +1,8 @@
 import { useState } from "react"
 import "../style/navbar.css"
 import pic from "../img/icon.jpg";
+import { AiOutlineMenu } from 'react-icons/ai';
+
 
 export default function Navbar() {
   const [isNavExpanded, setIsNavExpanded] = useState(false)
@@ -15,7 +17,7 @@ export default function Navbar() {
           setIsNavExpanded(!isNavExpanded)
         }}
       >
-        {/* hamburger svg code... */}
+        {<AiOutlineMenu/>}
       </button>
       <div
         className={

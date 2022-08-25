@@ -1,8 +1,5 @@
 import { useState, useEffect } from 'react';
 import '../style/form.css'
-import { Modal } from './modal';
-
-
 export default function Form({ setDataFromChild , toggleModalFromChild}) {
 
 // States for registration
@@ -72,13 +69,13 @@ return (
 	<form className='main-form'>
         <div className="user-details">
 
-        <div class="flex-container">
+        <div className="flex-container">
 
-            <div class="flex-child magenta">
+            <div className="flex-child magenta">
             <label className="details">Enter your name</label>
                         <input type="text" onChange={handleName} value={name} placeholder="Enter your name" required/></div>
 
-            <div class="flex-child green">
+            <div className="flex-child green">
             <label className="details">Phone number</label>
                         <input type="number" onChange={handleNumber} value={phone} placeholder="Enter your phone" required/></div>
 

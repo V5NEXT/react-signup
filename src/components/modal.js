@@ -34,7 +34,7 @@ export const Modal = ({ onRequestClose , onModalLoad}) => {
 				<h3 className="modal__title">Alert</h3>
 			    <h4>{onModalLoad}</h4>
 				<p>
-					To close this modal, press the button below or use the Escape key on desktop.
+					To close this modal, press the button  or use the Escape key on desktop.
 				</p>
 
 			</div>
