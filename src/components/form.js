@@ -14,10 +14,6 @@ const [isModalOpen, setModalIsOpen] = useState(false);
 const [submitted, setSubmitted] = useState(false);
 const [error, setError] = useState(false);
 
-const toggleModal = () => {
-    setModalIsOpen(!isModalOpen);
-    setDataFromChild(submitted);
-};
 // Handling the name change
 const handleName = (e) => {
 	setName(e.target.value);
@@ -58,6 +54,7 @@ const handleSubmit = (e) => {
     setEmail('');
     setMessage('');
 	}
+    setDataFromChild(!submitted);
     toggleModalFromChild()
 };
 
@@ -76,9 +73,10 @@ return (
                         <input type="text" onChange={handleName} value={name} placeholder="Enter your name" required/></div>
 
             <div className="flex-child green">
-            <label className="details">Phone number</label>
                         <div id="input-wrapper">
-                        <label for="number">+44</label>
+                        <label className="details">Phone number</label>
+
+                        <label className='label-num' htmlFor='number'>+44</label>
                         <input type="number" onChange={handleNumber} value={phone} placeholder="Enter your phone" required/></div>
                         </div>
             </div>

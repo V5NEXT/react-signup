@@ -113,12 +113,9 @@
         padding: 3%;
     }
 
-    #input-wrapper * {
-        position: absolute;
-        margin-right: 100%;
-      }
       
-      #input-wrapper label {
+     .label-num {
+        position: absolute;
         z-index: 99;
         line-height: 40px;
         padding: 5px;
