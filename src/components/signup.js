@@ -20,7 +20,6 @@ const DataFromChild = num => {
 
 return(
     <div className="container">
-        {console.log("Inside JSX", dataFromChild)}
             {isModalOpen && <Modal onRequestClose={ToggleModal} onModalLoad={dataFromChild ? 'You are Succesfully registerd': 'Please Enter all Mandatory Values'}/>}
 
             <div className="split left">
